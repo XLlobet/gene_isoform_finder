@@ -27,20 +27,19 @@ from    requests import Response
 
 # Get UniProt data 
 # ---------------------------------------------------------------------
-def get_uniprot_data(entry_search:  str)->str:
+def get_uniprot_data(entry_gene_name:  str)->str:
     '''
-    Find and return UniProt data for the searched protein in the 
-    'entry_search' parameter.
+    Find and return the full UniProt sequence for the entry gene name.
 
     ## Parameters:
-        - entry_search (str): the searched word by the user.
+        - entry_gene_name (str): the searched gene by the user.
 
     ## Returns a tuple of:
         - uniprot_response_str (str): the raw sequence as a FASTA string.
     '''
 
     # Input searching word:
-    search_word:            str     = entry_search
+    search_word:            str     = entry_gene_name
 
     # Organism. Always human, or can be homo sapiens also.
     organism:               str     = "human"

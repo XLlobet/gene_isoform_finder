@@ -57,14 +57,17 @@
                 <small><p>{{ result|safe }}</p></small>
             </div>            
         </div>
-        <div class="row m-0 mb-4 p-4 pt-0">
-            {% for app_name in apps_list %}
-                <div class="col-4 m-0 mb-4 p-0 pb-4">
-                        {%load plotly_dash%}
-                        {%plotly_app name=app_name ratio=1 %}
-                </div>
-            {% endfor %}
-        </div>
+        
+        {% if apps_list %}
+            <div class="row m-0 mb-4 p-4 pt-0">
+                {% for app_name in apps_list %}
+                    <div class="col-4 m-0 mb-4 p-0 pb-4">
+                            {%load plotly_dash%}
+                            {%plotly_app name=app_name ratio=1 %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
 
         <!-- FOOTER -->
         <footer class="footer mt-4">
