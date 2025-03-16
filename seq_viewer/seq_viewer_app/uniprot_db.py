@@ -1,12 +1,29 @@
+#   App Name:   Gene Isoform Finder
+#   Author:     Xavier Llobet Navàs
+#   Content:    Functions to extract sequences from the UniProt database
+#               for the Gene Isoform Finder
+#
+# - This file contains all the Django framework urñs for the 
+#   Gene Isoform Finder:
+#
+# - Funtions are:
+#
+#       - get_uniprot_data()
+#       - find_fasta_accession()
+#
 # =====================================================================
+
+
 # IMPORTS
 # =====================================================================
 
 import  json
-import  re
 import  requests
 from    requests import Response
 
+
+# FUNCTION
+# =====================================================================
 
 # Get UniProt data 
 # ---------------------------------------------------------------------
@@ -17,22 +34,9 @@ def get_uniprot_data(entry_search:  str)->str:
 
     ## Parameters:
         - entry_search (str): the searched word by the user.
-        - response_type (str): Optional parameter. Default empty string.
-        If setted as 'raw_sequence' will also add at the end of the tuple 
-        to return the raw sequence.
 
     ## Returns a tuple of:
-        - entries_found (list): a list with all the entries found for
-        the searched protein.
-        - entries_related (list): a list of the entries related to the
-        searched protein.
-        - fastas_dict (dict): a dictionary containing the protein name(s)
-        as key, and the related sequence as value.
-        - is_match (bool): True if match was found, else False.
-
-        Note: If 'response_type' is setted as 'raw_sequence', will add at the
-        end of the tuple:
-        - uniprot_response_str (str): the raw sequence as string.
+        - uniprot_response_str (str): the raw sequence as a FASTA string.
     '''
 
     # Input searching word:

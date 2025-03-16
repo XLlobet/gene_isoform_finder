@@ -1,33 +1,36 @@
 #   App Name:   Gene Isoform Finder
 #   Author:     Xavier Llobet Navàs
-#   Content:    ECT (Demo) views
+#   Content:    Gene Isoform Finder views
 #
 # - This file contains all the Django framework views for the 
-#   Endometrial Cancer Tool (Demo).
+#   Gene Isoform Finder.
 #
 # - The views are divided in different fields/sections:
 #
 #   - Home
 #
-# - Home site for a summary of the ECT purpose and the data used.
+# - Home site allows to search and find gene sequences of its
+#   isoforms.
 #
-# - EC Tool (Demo), can plot with no need of statistical knowledge, Progression-Free
-#   and Overall survival for some clinical categories.
-#
-# =====================================================================
-# IMPORTS
+# - Gene Isoform Finder, can search and find gene isoform sequences
+#   extracted from UniProt database.
 # =====================================================================
 
+
+# IMPORTS
+# =====================================================================
 
 from django.shortcuts   import render
 from .                  import dash_app
 from .                  import uniprot_db
 
-# Create your views here.
+
+# VIEWS
+# =====================================================================
 
 def index(request):
     '''
-    This function returns the Sequence Viewer view.
+    This function returns the landing view of Gene Isoform Finder.
     '''
 
     if request.method == 'GET':
@@ -58,7 +61,7 @@ def index(request):
 
             for isoform in isoforms_list:
 
-                current_app_name: str   = f"SequenceViewer{isoform_numb}"
+                current_app_name: str   = f"GeneIsoformFinder{isoform_numb}"
                 app_names_list.append(current_app_name)
 
                 dash_app.seq_viewer(input_gene.upper(),

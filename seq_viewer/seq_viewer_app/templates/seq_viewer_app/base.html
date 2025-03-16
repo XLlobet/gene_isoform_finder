@@ -42,26 +42,19 @@
 
         <div class="row p-0 m-0 mb-1 text-center">
             <small><p class="m-0 p-2 apps">
-                <a class="m-0 p-0 link-primary" href="{% url 'SeqViewer:index' %}">Home</a>
+                <a class="m-0 p-0 link-primary" href="{% url 'GeneIF:index' %}">Home</a>
             </p></small>
         </div>
 
         <div class="row m-0 mb-4 p-4">
             <div class="col-12 m-0 p-0">
-                <form action="{% url 'SeqViewer:index' %}" method="post">
+                <form action="{% url 'GeneIF:index' %}" method="post">
                     {% csrf_token %}
                     <label class="fs-3 w-100 text-center" for="sequence">Gene search</label>
                     <input name="gene_name" class="mb-1 form-control form-control-lg text-center" type="text" placeholder="Write a gene name">
                     <button class="btn btn-primary w-100" type="submit">Submit</button>
                 </form>
                 <small><p>{{ result|safe }}</p></small>
-                <!-- <hr>
-                <form action="{% url 'SeqViewer:index' %}" method="post">
-                    {% csrf_token %}
-                    <label for="sequence">Type a sequence</label>
-                    <textarea name="input_sequence" class="w-100" id="sequence" rows="5"></textarea>
-                    <button type="submit">Submit</button>
-                </form> -->
             </div>            
         </div>
         <div class="row m-0 mb-4 p-4 pt-0">
