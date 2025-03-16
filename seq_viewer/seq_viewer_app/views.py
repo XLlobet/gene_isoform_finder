@@ -33,12 +33,14 @@ def index(request):
     This function returns the landing view of Gene Isoform Finder.
     '''
 
+    # If GET request
     if request.method == 'GET':
 
         context: dict = {'title':           'Gene Isoform Finder'}
 
         return render(request, 'seq_viewer_app/base.html', context)
     
+    # If POST request
     if request.method == 'POST':
 
         input_gene:         str         = request.POST['gene_name']
