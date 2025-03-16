@@ -8,14 +8,18 @@ header{
 }
 
 footer{    
-    height: 150px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    vertical-align: middle;
-    position: relative;
-    color: transparent;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: white;
+    color: white;
     background-color: #13668d;
+}
+
+.gene_title{
+    color: red;
 }
 
 .neonText {

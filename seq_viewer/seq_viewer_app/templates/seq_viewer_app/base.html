@@ -46,36 +46,45 @@
             </p></small>
         </div>
 
-        <div class="row m-0 p-0 pt-4 ps-4 pe-4">
-            <div class="col-6 m-0 p-0 pe-4">
+        <div class="row m-0 mb-4 p-4">
+            <div class="col-12 m-0 p-0">
+                <form action="{% url 'SeqViewer:index' %}" method="post">
+                    {% csrf_token %}
+                    <label class="fs-3 w-100 text-center" for="sequence">Gene search</label>
+                    <input name="gene_name" class="mb-1 form-control form-control-lg text-center" type="text" placeholder="Write a gene name">
+                    <button class="btn btn-primary w-100" type="submit">Submit</button>
+                </form>
+                <small><p>{{ result|safe }}</p></small>
+                <!-- <hr>
                 <form action="{% url 'SeqViewer:index' %}" method="post">
                     {% csrf_token %}
                     <label for="sequence">Type a sequence</label>
                     <textarea name="input_sequence" class="w-100" id="sequence" rows="5"></textarea>
                     <button type="submit">Submit</button>
-                </form>
-            </div>
-            <div class="col-6 m-0 p-0">
-                {% if seq_viewer_app %}
-                    {%load plotly_dash%}
-
-                    {%plotly_app name="SequenceViewer" ratio=0.6 %}
-                {% endif %}
+                </form> -->
             </div>            
+        </div>
+        <div class="row m-0 mb-4 p-4 pt-0">
+            {% for app_name in apps_list %}
+                <div class="col-4 m-0 mb-4 p-0 pb-4">
+                        {%load plotly_dash%}
+                        {%plotly_app name=app_name ratio=1 %}
+                </div>
+            {% endfor %}
         </div>
 
         <!-- FOOTER -->
-        <footer class="row m-0 mt-4 p-3 pt-4 pb-2">
-            <div class="row m-0 p-4 w-100 h-100 text-center">
-                <div class="col-4 m-0 p-0 text-start">
+        <footer class="footer mt-4">
+            <div class="row m-0 p-0">
+                <div class="col-6 m-0 p-0 ps-2 text-start align-middle">
+                    <small><span class="">Copyright &copy 2025 Xavier Llobet</span></small>
                 </div>
-                <div class="col-4 m-0 p-0">
-                    <p class="fs-6 p-4 text-white"><small>Copyright &copy 2025 Xavier Llobet</small></p>
+                <div class="col-6 m-0 p-0 pe-2 text-end">
+                    <small><span class="">Developed by Xavier Llobet</span></small>
                 </div>
-                <div class="col-4 m-0 p-0 text-end">
-                    <p class="fs-6 p-4 text-white"><small>Developed by <span class="fw-bold neonText fliker_pak">Xavier</span> <span class="fw-bold neonText">Llobet</span></small></p>
-                </div>                
             </div>
+            
+            
         </footer>
     </body>
 </html>
