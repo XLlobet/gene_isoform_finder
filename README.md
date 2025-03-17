@@ -59,8 +59,8 @@ It simplifies the complex process to find patterns in protein sequences.
 	Clone the repository.
 
 	```bash
-	git clone https://github.com/P4kD3v/ect_demo.git
-	cd ect_demo/ect_demo
+	git clone https://github.com/XLlobet/gene_isoform_finder.git
+	cd gene_isoform_finder/seq_viewer
 	```
 
 	Run the application:
