@@ -20,7 +20,7 @@
         <title>{{title}}</title>
         <link
             rel="icon"
-            href="../../static/seq_viewer_app/img/dna3.png"
+            href="../../static/seq_viewer_app/img/tab_img.png"
             type="image/x-icon"/>
     </head>
 
@@ -28,34 +28,28 @@
     <body>
         <!-- HEADER -->
         <header class="row p-0 m-0">
-            <div class="row h-100 m-0 p-4 pt-2">
-                <div class="col-1 m-0 p-0 pt-2 xavi">
-                </div>
-                <div class="col-10 m-0 p-4 pt-0 ps-0">
-                    <h1 class="m-0 ms-2 mt-4 p-0 pt-1 display-4 text-center title fw-bold">{{title}}</h1>
-                </div>
-                <div class="col-1 m-0 p-0 pt-3 pe-1 logo_column">                        
-
-                </div>
-            </div>            
+            <p class="m-0 p-4">{{title}}</p>            
         </header>
 
         <div class="row p-0 m-0 mb-1 text-center">
             <small><p class="m-0 p-2 apps">
-                <a class="m-0 p-0 link-primary" href="{% url 'GeneIF:index' %}">Home</a>
+                <a class="m-0 p-0 link-primary text-decoration-none" href="{% url 'GeneIF:index' %}">Home</a>
             </p></small>
         </div>
 
         <div class="row m-0 mb-4 p-4">
-            <div class="col-12 m-0 p-0">
+            <div class="col-6 m-0 p-0">
                 <form action="{% url 'GeneIF:index' %}" method="post">
                     {% csrf_token %}
-                    <label class="fs-3 w-100 text-center" for="sequence">Gene search</label>
-                    <input name="gene_name" class="mb-1 form-control form-control-lg text-center" type="text" placeholder="Write a gene name">
+                    <label class="w-100 fs-5 text-center" for="sequence">Gene search</label>
+                    <input name="gene_name" class="mb-1 form-control text-center" type="text" placeholder="Write a gene name">
                     <button class="btn btn-primary w-100" type="submit">Submit</button>
                 </form>
                 <small><p>{{ result|safe }}</p></small>
-            </div>            
+            </div>
+            <div class="col-6 m-0 p-4">
+                <p class="m-0 p-0"><small>Write a gene name to search.<br> The <b>Gene Isoform Finder</b> app will display all isoform sequences related to the searched gene.</small></p>
+            </div>              
         </div>
         
         {% if apps_list %}
@@ -72,10 +66,10 @@
         <!-- FOOTER -->
         <footer class="footer mt-4">
             <div class="row m-0 p-0">
-                <div class="col-6 m-0 p-0 ps-2 text-start align-middle">
+                <div class="col-6 m-0 p-0 ps-4 text-start align-middle">
                     <small><span class="">Copyright &copy 2025 Xavier Llobet</span></small>
                 </div>
-                <div class="col-6 m-0 p-0 pe-2 text-end">
+                <div class="col-6 m-0 p-0 pe-4 text-end">
                     <small><span class="">Developed by Xavier Llobet</span></small>
                 </div>
             </div>
