@@ -1,9 +1,13 @@
 # Gene Isoform Finder
 ## Projects Aim
 
-The Gene Isoform Finder is a cutting-edge web application designed to easily find protein sequences (and all its isoforms) by searching a gene name.
+The **Gene Isoform Finder** is a cutting-edge web application designed to easily find protein sequences (and all its isoforms) by searching a gene name. It simplifies the complex process to find patterns in protein sequences.
 
-It simplifies the complex process to find patterns in protein sequences.
+Search, and analyze gene isoform sequences from **UniProt** database. It integrates a powerful sequence search and pattern matching functionality, enabling to quickly identify specific patterns within the data.
+
+Central to the application is the **Plotly Dash Bio** library, a suite of bioinformatics components that make it simpler to analyze and visualize bioinformatics data and interact with them in a Dash application.
+
+The **Sequence Viewer** component from Dash Bio, is offering fast, efficient pattern recognition and search capabilities. The application provides an intuitive interface for managing gene isoforms, ensuring ease of use while leveraging the advanced features of the Sequence Viewer component for in-depth analysis
 
 ## Technologies and libraries
 
