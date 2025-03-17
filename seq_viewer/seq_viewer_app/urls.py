@@ -20,11 +20,16 @@ from .                          import views
 app_name    = 'GeneIF'
 urlpatterns = [
 
-    path(   "accounts/", include("django.contrib.auth.urls")),
-    path(   "",
-            views.index,
-            name="index"),
-    path(   "GeneIF",
-            views.index,
-            name="index")
+        path(   "accounts/", include("django.contrib.auth.urls")),
+        path(   "",
+                views.index,
+                name="index"),
+        path(   "GeneIF",
+                views.index,
+                name="index"),
+        path(   "GeneIF/gene_isoform_finder/",
+                views.gene_isoform_finder,
+                name="gene_isoform_finder")
+
+            
 ]

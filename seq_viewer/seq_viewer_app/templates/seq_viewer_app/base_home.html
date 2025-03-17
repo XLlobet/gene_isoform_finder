@@ -1,0 +1,41 @@
+{% extends "./base.html" %}
+{% block home %}
+
+<h1 class="w-100 p-4 pb-1 text-center">Home</h1>
+<hr>
+
+<div class="row m-0 p-2 text-center justify-content-center">
+    <p class="w-75 text-center p-0"><small>
+        Search, and analyze gene isoform sequences from <b>UniProt</b> database. It integrates a powerful sequence 
+        search and pattern matching functionality, enabling to quickly identify 
+        specific patterns within the data.<br><br>
+        
+        Central to the application is the <b>Plotly Dash Bio</b> library, a suite of bioinformatics 
+        components that make it simpler to analyze and visualize bioinformatics 
+        data and interact with them in a Dash application.<br><br>
+
+        The <b>Sequence Viewer</b> component from Dash Bio, is offering fast, efficient pattern recognition and search capabilities. 
+        The application provides an intuitive interface for managing gene isoforms, ensuring ease of use while leveraging 
+        the advanced features of the Sequence Viewer component for in-depth analysis.
+    </small></p>
+</div>
+
+<div class="row m-0 mb-4 p-0">
+    <p class="w-100 m-0 p-0 text-center fs-4">Video tutorial</p>
+    <div class="col-2 m-0 p-0"></div>
+    <div class="col-8 m-0 p-4 bg-secondary bg-opacity-10 rounded d-flex justify-content-center">
+        
+        <video class="w-75" controls>
+            <source src="../../static/seq_viewer_app/video/GenIsofomFnder.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video> 
+    </div>
+    <div class="col-2 m-0 p-0"></div>
+</div>
+
+<div class="row m-0 mt-4 mb-4 p-0">
+    
+</div>
+
+
+{% endblock home %}

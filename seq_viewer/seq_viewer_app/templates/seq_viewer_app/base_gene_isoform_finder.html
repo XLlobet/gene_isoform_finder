@@ -1,0 +1,33 @@
+{% extends "./base.html" %}
+{% block gene_isoform_finder %}
+
+<h1 class="w-100 p-4 pb-1 text-center">Gene Isoform Finder</h1>
+<hr>
+
+<div class="row m-0 mb-4 p-4">
+    <div class="col-6 m-0 p-0">
+        <form action="{% url 'GeneIF:gene_isoform_finder' %}" method="post">
+            {% csrf_token %}
+            <label class="w-100 fs-5 text-center" for="sequence">Gene search</label>
+            <input name="gene_name" class="mb-1 form-control text-center" type="text" placeholder="Write a gene name">
+            <button class="btn btn-primary w-100" type="submit">Submit</button>
+        </form>
+        <small><p>{{ result|safe }}</p></small>
+    </div>
+    <div class="col-6 m-0 p-4">
+        <p class="m-0 p-0"><small>Write a gene name to search.<br> The <b>Gene Isoform Finder</b> app will display all isoform sequences related to the searched gene.</small></p>
+    </div>              
+</div>
+
+{% if apps_list %}
+    <div class="row m-0 mb-4 p-4 pt-0">
+        {% for app_name in apps_list %}
+            <div class="col-4 m-0 mb-4 p-0 pb-4">
+                    {%load plotly_dash%}
+                    {%plotly_app name=app_name ratio=1 %}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% endblock gene_isoform_finder %}

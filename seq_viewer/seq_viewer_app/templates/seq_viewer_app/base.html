@@ -34,32 +34,25 @@
         <div class="row p-0 m-0 mb-1 text-center">
             <small><p class="m-0 p-2 apps">
                 <a class="m-0 p-0 link-primary text-decoration-none" href="{% url 'GeneIF:index' %}">Home</a>
+                <a class="m-0 ms-4 p-0 link-primary text-decoration-none" href="{% url 'GeneIF:gene_isoform_finder' %}">Gene Isoform Finder</a>
             </p></small>
         </div>
 
-        <div class="row m-0 mb-4 p-4">
-            <div class="col-6 m-0 p-0">
-                <form action="{% url 'GeneIF:index' %}" method="post">
-                    {% csrf_token %}
-                    <label class="w-100 fs-5 text-center" for="sequence">Gene search</label>
-                    <input name="gene_name" class="mb-1 form-control text-center" type="text" placeholder="Write a gene name">
-                    <button class="btn btn-primary w-100" type="submit">Submit</button>
-                </form>
-                <small><p>{{ result|safe }}</p></small>
+        {% if field == 'home' %}
+            <div class="row m-0 p-0">
+                <div class="row m-0 p-0" id="home">
+                    {% block home %}
+                    {% endblock home %} 
+                </div>
             </div>
-            <div class="col-6 m-0 p-4">
-                <p class="m-0 p-0"><small>Write a gene name to search.<br> The <b>Gene Isoform Finder</b> app will display all isoform sequences related to the searched gene.</small></p>
-            </div>              
-        </div>
-        
-        {% if apps_list %}
-            <div class="row m-0 mb-4 p-4 pt-0">
-                {% for app_name in apps_list %}
-                    <div class="col-4 m-0 mb-4 p-0 pb-4">
-                            {%load plotly_dash%}
-                            {%plotly_app name=app_name ratio=1 %}
-                    </div>
-                {% endfor %}
+        {% endif %}
+
+        {% if field == 'gene_isoform_finder' %}
+            <div class="row m-0 p-0">
+                <div class="row m-0 p-0" id="gene_isoform_finder">
+                    {% block gene_isoform_finder %}
+                    {% endblock gene_isoform_finder %} 
+                </div>
             </div>
         {% endif %}
 
