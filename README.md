@@ -35,7 +35,7 @@ It simplifies the complex process to find patterns in protein sequences.
 		
 	- <font size=4>**Directory tree structure**</font>:
 
- 	 	![Directory structure](https://github.com/P4kD3v/ect_demo/blob/main/ect_demo%20tree.png?raw=true)
+ 	 	![Directory structure](https://github.com/XLlobet/gene_isoform_finder/blob/main/geneif_tree.png)
 
 2. ### Location of the main function.
       The main door or function of the project, is the ***ìndex()*** function from **views.py** file from ***'gene_isoform_finder/seq_viewer/seq_viewer_app'*** folder. 
