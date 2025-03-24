@@ -56,7 +56,7 @@ The **Sequence Viewer** component from Dash Bio, is offering fast, efficient pat
 	Clone the repository.
 
 	```bash
-	git clone https://github.com/XLlobet/gene_isoform_finder.git
+	git clone git@github.com:XLlobet/gene_isoform_finder.git
 	cd gene_isoform_finder/seq_viewer
 	```
 
